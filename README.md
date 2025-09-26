@@ -8,18 +8,13 @@ Authors: Xueyuan Cui, Liudong Chen, Yi Wang, and Bolun Xu.
 
 ## Experiments
 
-To create the required data, please run
-```
-cd Codes/
-Data_create.py
-```
-This code will generate both the post-processing real-time price and the probabilistic distributions of prices. Please note that the generated data has been saved in ```Data```for direct use. The raw data of prices can be collected at [NYISO]{https://www.nyiso.com/energy-market-operational-data}.
+To create the required data, please run the Python code in ```Codes```: ```Data_create.py```. This code will generate both the post-processing real-time price and the probabilistic distributions of prices. Please note that the generated data has been saved in ```Data```for direct use. The raw data of prices can be collected at [NYISO](https://www.nyiso.com/energy-market-operational-data).
 
-To reproduce the comparisons between the proposed method and SDDP, please run the matlab codes in ```Codes```: ```Com_main.m``` and ```matlab Com_SDDP.m```. We acknowledge the open-source toolbox named [FAST]{https://stanford.edu/~lcambier/cgi-bin/fast/tuto.php} to support our experiment on SDDP.
+To reproduce the comparisons between the proposed method and SDDP, please run the MATLAB codes in ```Codes```: ```Com_main.m``` and ```matlab Com_SDDP.m```. We acknowledge the open-source toolbox named [FAST](https://stanford.edu/~lcambier/cgi-bin/fast/tuto.php) to support our experiment on SDDP.
 
-To reproduce the experiments of real-time demand response with different comfort functions, please run the matlab codes in ```Codes```: ```Response.m```.
+To reproduce the experiments of real-time demand response with different comfort functions, please run the MATLAB code in ```Codes```: ```Response.m```.
 
-The figures are generated with the results from matlab codes and the python codes in ```Codes```: ```Figures.py```.
+The figures are generated with the results from MATLAB codes and the Python code in ```Codes```: ```Figures.py```.
 
 ## Citation
 ```
