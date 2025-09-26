@@ -8,7 +8,6 @@ Authors: Xueyuan Cui, Liudong Chen, Yi Wang, and Bolun Xu.
 
 ## Experiments
 
-### Reproduction
 To create the required data, please run
 ```
 cd Codes/
