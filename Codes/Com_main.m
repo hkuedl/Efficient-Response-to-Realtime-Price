@@ -28,9 +28,9 @@ for type_i = 1:2
         Pri_da_Feb = data_in.Pri_da_Feb;
         
         quantiles_all = load('Data_quan_20.mat');
-        s_sam_number = 2001;
+        s_sam_number = 501;
         quantiles_x = quantiles_all.(['x_' num2str(Price_sam)])(1,2:end-1);
-        s_sam = -10 + 0.01*(0:s_sam_number-1)';
+        s_sam = -10 + 0.04*(0:s_sam_number-1)';
         u = zeros(s_sam_number, 2);
         u(:,1) = s_sam;
         u(:,2) = U_pen*sign(u(:,1));
