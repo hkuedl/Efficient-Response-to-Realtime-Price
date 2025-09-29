@@ -19,11 +19,11 @@ make = 'Sample' #'Time'  #'Sample'
 
 if make == 'Time':
     SDDP = np.array([[150.0899349,305.3327509,455.601675,2425.750224,3811.04621],[51.95043137,106.3876838,158.936052,255.4874618,332.4472764]])
-    Pro = np.array([[0.5955181,1.5590226,2.8049279,3.7569818,4.6367876],[51.95204986,106.387799,158.9371368,255.6275064,332.9608456]])
+    Pro = np.array([[0.086555,0.1800674,0.3021766,0.3764562,0.4701486],[51.95204986,106.3879543,158.9371368,256.0802637,333.5446335]])
     labels = ['2h','4h','6h','8h','10h']
 else:
     SDDP = np.array([[538.3051696,1525.248976,790.3121741,1382.501419,1390.807388],[79.68735508,79.68735508,79.68735508,79.68735508,79.68735508]])
-    Pro = np.array([[1.0436567,0.9434197,0.956537,0.9519198,0.9695071],[79.6881922,79.6881922,79.6881922,79.6881922,79.6881922]])
+    Pro = np.array([[0.1729198,0.1375945,0.1380125,0.1381617,0.1363649],[79.6932,79.6932,79.6932,79.6932,79.6932]])
     labels = ['20','40','60','80','100']
 
 fig = plt.figure(figsize=(10, 6))
@@ -36,11 +36,11 @@ ax.tick_params(labelsize=s_font)
 ax.set_xlabel('Time (s)', fontsize=s_font+2)
 ax.set_ylabel('Objective value ($)', fontsize=s_font+2)
 if make == 'Time':
-    ymin,ymax = 0,450
+    ymin,ymax = 0,500
 else:
     ymin,ymax = 75,85
 ax.set_ylim(ymin,ymax)
-ax.set_xlim(1e-1,1e4)
+ax.set_xlim(1e-2,1e4)
 ax.grid(True,axis = 'y', which = "both", ls="--")
 # main_legend = ax.legend(['Proposed','SDDP'], fontsize=s_font, loc='upper left')
 
@@ -55,11 +55,11 @@ custom_lines = [
 # ax.add_artist(main_legend)
 custom_legend = ax.legend(handles=custom_lines, loc='upper center', fontsize=s_font, ncol = 5)
 
-ax.axvspan(0, 10, facecolor='lightpink', alpha=0.3)
-ax.axvspan(10, 1e4, facecolor='lightblue', alpha=0.3)
+ax.axvspan(1e-2, 1e1, facecolor='lightpink', alpha=0.3)
+ax.axvspan(1e1, 1e4, facecolor='lightblue', alpha=0.3)
 
-ax.text(0.6, ymin+0.8*(ymax-ymin),'Proposed',fontsize=s_font,color='black')
-ax.text(3e2, ymin+0.8*(ymax-ymin),'SDDP',fontsize=s_font,color='black')
+ax.text(0.1, ymin+0.8*(ymax-ymin),'Proposed',fontsize=s_font,color='black')
+ax.text(2e2, ymin+0.8*(ymax-ymin),'SDDP',fontsize=s_font,color='black')
 
 plt.show()
 fig.savefig('Figs/SDDP_'+make+'.pdf',format='pdf',dpi=600,bbox_inches='tight')
